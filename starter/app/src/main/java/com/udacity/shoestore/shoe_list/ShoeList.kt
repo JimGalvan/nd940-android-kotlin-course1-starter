@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
-import com.udacity.shoestore.databinding.ShoeItemBinding
+import com.udacity.shoestore.databinding.ShoeBannerBinding
 
 
 class ShoeList : Fragment() {
@@ -31,7 +31,7 @@ class ShoeList : Fragment() {
 
         shoeListViewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeList ->
             shoeList.forEach { shoe ->
-                val shoeItemBinding = DataBindingUtil.inflate<ShoeItemBinding>(inflater, R.layout.shoe_item, container, false)
+                val shoeItemBinding = DataBindingUtil.inflate<ShoeBannerBinding>(inflater, R.layout.shoe_banner, container, false)
                 shoeItemBinding.shoe = shoe
                 binding.shoeListLinearLayout.addView(shoeItemBinding.root)
             }
