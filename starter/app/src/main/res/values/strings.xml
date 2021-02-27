@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ShoeStore</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_text">Hello welcome to the Shoe Store. Lorem Ipsum is simply dummy text of the printing and typesetting industry. \nLorem Ipsum has been the industry \nstandard dummy text ever since the 1500s, \nwhen an unknown printer took a galley of type and scrambled it to make a type specimen book. \nIt has survived not only five centuries, but also the leap into electronic typesetting, \n\nremaining essentially unchanged. It was popularised in the 1960s with the release of Letraset \nsheets containing Lorem Ipsum passages, \nand more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="instructions_text">
+        Hello welcome to the Shoe Store app. In this store you will be able to create a list of shoes with company, size, and description information.
+        Go to the next screen to see your shoes and click the "+" button in order to add a new shoe.
+        Make sure to include all fields.
+    </string>
 </resources>
