@@ -10,146 +10,154 @@
             type="com.udacity.shoestore.shoe_list.ShoeListViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!-- Constraint layout in order to allow users to use landscape mode in this screen -->
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_dark_blue">
+        android:fillViewport="true">
 
-        <Button
-            android:id="@+id/cancelNewShoeButton"
-            android:layout_width="0dp"
-            android:layout_height="62dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/button_red_one"
-            android:text="Cancel"
-            android:textColor="@color/font_grey"
-            app:flow_horizontalAlign="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/shoeDescriptionInput"
-            app:layout_constraintTop_toBottomOf="@+id/shoeDescriptionInput"
-            app:layout_constraintVertical_bias="0.0" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_dark_blue">
 
-        <Button
-            android:id="@+id/saveNewShoe"
-            android:layout_width="0dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/button_red_one"
-            android:text="Save"
-            android:textColor="@color/font_grey"
-            app:flow_horizontalAlign="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/shoeDescriptionInput"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/cancelNewShoeButton"
-            app:layout_constraintTop_toBottomOf="@+id/shoeDescriptionInput"
-            app:layout_constraintVertical_bias="0.0" />
+            <Button
+                android:id="@+id/cancelNewShoeButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/button_red_one"
+                android:text="Cancel"
+                android:textColor="@color/font_grey"
+                app:flow_horizontalAlign="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/shoeDescriptionInput"
+                app:layout_constraintTop_toBottomOf="@+id/shoeDescriptionInput"
+                app:layout_constraintVertical_bias="0.0" />
 
-        <EditText
-            android:id="@+id/shoeDescriptionInput"
-            android:layout_width="335dp"
-            android:layout_height="180dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/text_field_color"
-            android:ems="10"
-            android:hint="Description"
-            android:inputType="textEmailAddress"
-            android:textAlignment="center"
-            android:textColor="@color/grey_color_font"
-            android:textColorHint="#C9C9C9"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shoeCompanyInput"
-            app:layout_constraintVertical_bias="0.00999999" />
+            <Button
+                android:id="@+id/saveNewShoe"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/button_red_one"
+                android:text="Save"
+                android:textColor="@color/font_grey"
+                app:flow_horizontalAlign="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/shoeDescriptionInput"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/cancelNewShoeButton"
+                app:layout_constraintTop_toBottomOf="@+id/shoeDescriptionInput"
+                app:layout_constraintVertical_bias="0.0" />
 
-        <EditText
-            android:id="@+id/shoeCompanyInput"
-            android:layout_width="330dp"
-            android:layout_height="62dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/text_field_color"
-            android:ems="10"
-            android:hint="Company"
-            android:inputType="textEmailAddress"
-            android:textAlignment="center"
-            android:textColor="@color/font_grey"
-            android:textColorHint="#C9C9C9"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/showSizeInput"
-            app:layout_constraintVertical_bias="0.0" />
+            <EditText
+                android:id="@+id/shoeDescriptionInput"
+                android:layout_width="335dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/text_field_color"
+                android:ems="10"
+                android:hint="Description"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center"
+                android:textColor="@color/grey_color_font"
+                android:textColorHint="#C9C9C9"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shoeCompanyInput"
+                app:layout_constraintVertical_bias="0.00999999" />
 
-        <EditText
-            android:id="@+id/showSizeInput"
-            android:layout_width="330dp"
-            android:layout_height="62dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/text_field_color"
-            android:ems="10"
-            android:hint="Size"
-            android:inputType="textEmailAddress"
-            android:textAlignment="center"
-            android:textColor="@color/font_grey"
-            android:textColorHint="#C9C9C9"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shoeNameInput"
-            app:layout_constraintVertical_bias="0.0" />
+            <EditText
+                android:id="@+id/shoeCompanyInput"
+                android:layout_width="330dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/text_field_color"
+                android:ems="10"
+                android:hint="Company"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center"
+                android:textColor="@color/font_grey"
+                android:textColorHint="#C9C9C9"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/showSizeInput"
+                app:layout_constraintVertical_bias="0.0" />
 
-        <EditText
-            android:id="@+id/shoeNameInput"
-            android:layout_width="330dp"
-            android:layout_height="62dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/text_field_color"
-            android:ems="10"
-            android:hint="Shoe name"
-            android:inputType="textEmailAddress"
-            android:textAlignment="center"
-            android:textColor="@color/font_grey"
-            android:textColorHint="#C9C9C9"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/new_shoe_instructions"
-            app:layout_constraintVertical_bias="0.0" />
+            <EditText
+                android:id="@+id/showSizeInput"
+                android:layout_width="330dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/text_field_color"
+                android:ems="10"
+                android:hint="Size"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center"
+                android:textColor="@color/font_grey"
+                android:textColorHint="#C9C9C9"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shoeNameInput"
+                app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/shoe_list_title2"
-            android:layout_width="213dp"
-            android:layout_height="67dp"
-            android:text="New shoe"
-            android:textAlignment="center"
-            android:textColor="#C9C9C9"
-            android:textSize="@dimen/size_h2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.100000024" />
+            <EditText
+                android:id="@+id/shoeNameInput"
+                android:layout_width="330dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/text_field_color"
+                android:ems="10"
+                android:hint="Shoe name"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center"
+                android:textColor="@color/font_grey"
+                android:textColorHint="#C9C9C9"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/new_shoe_instructions"
+                app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/new_shoe_instructions"
-            android:layout_width="0dp"
-            android:layout_height="36dp"
-            android:background="@color/button_red_one"
-            android:padding="5dp"
-            android:text="Enter shoe's information in the following fields"
-            android:textAlignment="center"
-            android:textColor="@color/font_grey"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shoe_list_title2" />
+            <TextView
+                android:id="@+id/shoe_list_title2"
+                android:layout_width="213dp"
+                android:layout_height="67dp"
+                android:layout_marginTop="50dp"
+                android:text="New shoe"
+                android:textAlignment="center"
+                android:textColor="#C9C9C9"
+                android:textSize="@dimen/size_h2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/new_shoe_instructions"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:background="@color/button_red_one"
+                android:padding="5dp"
+                android:text="Enter shoe's information in the following fields"
+                android:textAlignment="center"
+                android:textColor="@color/font_grey"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shoe_list_title2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </layout>
