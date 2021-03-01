@@ -20,7 +20,7 @@
                 android:id="@+id/editTextTextPassword2"
                 android:layout_width="0dp"
                 android:layout_height="62dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:background="@color/text_field_color"
                 android:ems="10"
                 android:hint="Password"
@@ -28,16 +28,16 @@
                 android:textAlignment="center"
                 android:textColor="@color/font_grey"
                 android:textColorHint="#C9C9C9"
+                app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword4"
                 app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress2"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress2"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress2" />
 
             <EditText
                 android:id="@+id/editTextTextPassword4"
                 android:layout_width="0dp"
                 android:layout_height="62dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:background="@color/text_field_color"
                 android:ems="10"
                 android:hint="Confirm password"
@@ -45,10 +45,10 @@
                 android:textAlignment="center"
                 android:textColor="@color/font_grey"
                 android:textColorHint="#C9C9C9"
+                app:layout_constraintBottom_toTopOf="@+id/create_account_button"
                 app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress2"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress2"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+                app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress2" />
 
             <TextView
                 android:id="@+id/textView"
@@ -58,15 +58,16 @@
                 android:textAlignment="center"
                 android:textColor="#C9C9C9"
                 android:textSize="@dimen/size_h2"
+                app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:id="@+id/editTextTextEmailAddress2"
                 android:layout_width="330dp"
                 android:layout_height="62dp"
+                android:layout_marginBottom="8dp"
                 android:background="@color/text_field_color"
                 android:ems="10"
                 android:hint="Username"
@@ -74,18 +75,16 @@
                 android:textAlignment="center"
                 android:textColor="@color/background_color_grey"
                 android:textColorHint="#C9C9C9"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:layout_constraintVertical_bias="0.00999999" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:id="@+id/editTextTextPassword"
                 android:layout_width="0dp"
                 android:layout_height="62dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:background="@color/text_field_color"
                 android:ems="10"
                 android:hint="Email address"
@@ -93,25 +92,22 @@
                 android:textAlignment="center"
                 android:textColor="@color/font_grey"
                 android:textColorHint="#C9C9C9"
+                app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword2"
                 app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress2"
                 app:layout_constraintHorizontal_bias="0.467"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress2"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+                app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress2" />
 
             <Button
                 android:id="@+id/create_account_button"
                 android:layout_width="334dp"
                 android:layout_height="62dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@color/button_red_two"
                 android:text="Create account"
                 android:textColor="@color/font_grey"
                 app:layout_constraintBottom_toTopOf="@+id/continue_existing_account_button"
                 app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword4"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextPassword4"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword4"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintStart_toStartOf="@+id/editTextTextPassword4" />
 
             <Button
                 android:id="@+id/continue_existing_account_button"
@@ -130,13 +126,12 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
                 android:text="Shoe store"
                 android:textColor="#FFFFFF"
                 android:textSize="55sp"
+                app:layout_constraintBottom_toTopOf="@+id/textView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </layout>
