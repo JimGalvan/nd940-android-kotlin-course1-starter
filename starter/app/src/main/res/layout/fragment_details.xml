@@ -6,6 +6,10 @@
 
     <data>
         <variable
+            name="shoeModel"
+            type="com.udacity.shoestore.models.Shoe" />
+
+        <variable
             name="shoeListViewModel"
             type="com.udacity.shoestore.shoe_list.ShoeListViewModel" />
     </data>
@@ -37,7 +41,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <Button
-                android:id="@+id/saveNewShoe"
+                android:id="@+id/saveNewShoeButton"
                 android:layout_width="0dp"
                 android:layout_height="62dp"
                 android:layout_marginStart="8dp"
@@ -46,6 +50,8 @@
                 android:background="@color/button_red_one"
                 android:text="Save"
                 android:textColor="@color/font_grey"
+                android:onClick=
+                    "@{() -> shoeListViewModel.addShoeToList(shoeModel)}"
                 app:flow_horizontalAlign="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/shoeDescriptionInput"
@@ -66,6 +72,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/grey_color_font"
                 android:textColorHint="#C9C9C9"
+                android:text="@={shoeModel.description}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
@@ -85,6 +92,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/font_grey"
                 android:textColorHint="#C9C9C9"
+                android:text="@={shoeModel.company}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
@@ -104,12 +112,14 @@
                 android:textAlignment="center"
                 android:textColor="@color/font_grey"
                 android:textColorHint="#C9C9C9"
+                android:text="@={shoeModel.sizeString}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/shoeNameInput"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="size" />
 
             <EditText
                 android:id="@+id/shoeNameInput"
@@ -123,12 +133,14 @@
                 android:textAlignment="center"
                 android:textColor="@color/font_grey"
                 android:textColorHint="#C9C9C9"
+                android:text="@={shoeModel.name}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/new_shoe_instructions"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="shoe name" />
 
             <TextView
                 android:id="@+id/shoe_list_title2"

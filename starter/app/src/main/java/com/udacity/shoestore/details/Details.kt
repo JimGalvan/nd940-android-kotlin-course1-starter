@@ -7,21 +7,18 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentDetailsBinding
+import com.udacity.shoestore.models.Shoe
 import com.udacity.shoestore.shoe_list.ShoeListViewModel
 
 
 class Details : Fragment() {
-
-    var name: String = "none"
-    var shoeSize: String = "0.0"
-    var shoeCompany: String = "none"
-    var shoeDescription: String = "none"
-
     private val shoeListViewModel: ShoeListViewModel by activityViewModels()
+    private val shoeModel : Shoe = Shoe()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -30,23 +27,22 @@ class Details : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentDetailsBinding>(
             inflater, R.layout.fragment_details, container, false
         )
+        binding.shoeModel = shoeModel
+        binding.lifecycleOwner = this
 
         ViewModelProvider(this).get(ShoeListViewModel::class.java)
+
         binding.shoeListViewModel = shoeListViewModel
 
-        binding.saveNewShoe.setOnClickListener {
-            name = binding.shoeNameInput.text.toString()
-            shoeSize = binding.showSizeInput.text.toString()
-            shoeCompany = binding.shoeCompanyInput.text.toString()
-           shoeDescription= binding.shoeDescriptionInput.text.toString()
-
-            shoeListViewModel.addShoeToList(name, shoeSize, shoeCompany, shoeDescription)
-            findNavController().navigate(DetailsDirections.actionDetailsToShoeList2()
-            )
-        }
+       shoeListViewModel.shoeSaved.observe(viewLifecycleOwner, Observer { isShoeSaved ->
+            if(isShoeSaved) {
+                findNavController().popBackStack()
+                shoeListViewModel.onShoeSaved()
+            }
+        })
 
         binding.cancelNewShoeButton.setOnClickListener {
-            findNavController().navigate(DetailsDirections.actionDetailsToShoeList2())
+            findNavController().navigateUp()
         }
 
         return binding.root
