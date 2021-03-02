@@ -29,118 +29,123 @@
                 android:id="@+id/cancelNewShoeButton"
                 android:layout_width="0dp"
                 android:layout_height="62dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="16dp"
                 android:background="@color/button_red_one"
                 android:text="Cancel"
                 android:textColor="@color/font_grey"
                 app:flow_horizontalAlign="center"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/shoeDescriptionInput"
-                app:layout_constraintTop_toBottomOf="@+id/shoeDescriptionInput"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintStart_toStartOf="@+id/shoeDescriptionInput" />
 
             <Button
                 android:id="@+id/saveNewShoeButton"
                 android:layout_width="0dp"
                 android:layout_height="62dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="16dp"
                 android:background="@color/button_red_one"
+                android:onClick="@{() -> shoeListViewModel.addShoeToList(shoeModel)}"
                 android:text="Save"
                 android:textColor="@color/font_grey"
-                android:onClick=
-                    "@{() -> shoeListViewModel.addShoeToList(shoeModel)}"
                 app:flow_horizontalAlign="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/shoeDescriptionInput"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/cancelNewShoeButton"
-                app:layout_constraintTop_toBottomOf="@+id/shoeDescriptionInput"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintStart_toEndOf="@+id/cancelNewShoeButton" />
 
             <EditText
                 android:id="@+id/shoeDescriptionInput"
                 android:layout_width="335dp"
-                android:layout_height="180dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="62dp"
+                android:layout_marginBottom="16dp"
                 android:background="@color/text_field_color"
                 android:ems="10"
-                android:hint="Description"
                 android:inputType="textEmailAddress"
+                android:text="@={shoeModel.description}"
                 android:textAlignment="center"
                 android:textColor="@color/grey_color_font"
                 android:textColorHint="#C9C9C9"
-                android:text="@={shoeModel.description}"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/saveNewShoeButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/shoeCompanyInput"
-                app:layout_constraintVertical_bias="0.00999999" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:id="@+id/shoeCompanyInput"
                 android:layout_width="330dp"
                 android:layout_height="62dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:background="@color/text_field_color"
                 android:ems="10"
-                android:hint="Company"
                 android:inputType="textEmailAddress"
+                android:text="@={shoeModel.company}"
                 android:textAlignment="center"
                 android:textColor="@color/font_grey"
                 android:textColorHint="#C9C9C9"
-                android:text="@={shoeModel.company}"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/description_label"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/showSizeInput"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
                 android:id="@+id/showSizeInput"
                 android:layout_width="330dp"
                 android:layout_height="62dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:background="@color/text_field_color"
                 android:ems="10"
-                android:hint="Size"
                 android:inputType="textEmailAddress"
+                android:text="@={shoeModel.sizeString}"
                 android:textAlignment="center"
                 android:textColor="@color/font_grey"
                 android:textColorHint="#C9C9C9"
-                android:text="@={shoeModel.sizeString}"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/company_label"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.493"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/shoeNameInput"
-                app:layout_constraintVertical_bias="0.0"
-                tools:text="size" />
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/company_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Company"
+                android:textColor="@color/font_grey"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/shoeCompanyInput"
+                app:layout_constraintEnd_toEndOf="@+id/shoeCompanyInput"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/shoeCompanyInput" />
 
             <EditText
                 android:id="@+id/shoeNameInput"
                 android:layout_width="330dp"
                 android:layout_height="62dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:background="@color/text_field_color"
                 android:ems="10"
-                android:hint="Shoe name"
                 android:inputType="textEmailAddress"
+                android:text="@={shoeModel.name}"
                 android:textAlignment="center"
                 android:textColor="@color/font_grey"
                 android:textColorHint="#C9C9C9"
-                android:text="@={shoeModel.name}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/size_label"
+                app:layout_constraintEnd_toEndOf="@+id/showSizeInput"
                 app:layout_constraintHorizontal_bias="0.493"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/new_shoe_instructions"
-                app:layout_constraintVertical_bias="0.0"
-                tools:text="shoe name" />
+                app:layout_constraintStart_toStartOf="@+id/showSizeInput" />
+
+            <TextView
+                android:id="@+id/size_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Size"
+                android:textColor="@color/font_grey"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/showSizeInput"
+                app:layout_constraintEnd_toEndOf="@+id/shoeCompanyInput"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/shoeCompanyInput" />
 
             <TextView
                 android:id="@+id/shoe_list_title2"
@@ -160,15 +165,43 @@
                 android:id="@+id/new_shoe_instructions"
                 android:layout_width="0dp"
                 android:layout_height="36dp"
+                android:layout_marginBottom="8dp"
                 android:background="@color/button_red_one"
                 android:padding="5dp"
                 android:text="Enter shoe's information in the following fields"
                 android:textAlignment="center"
                 android:textColor="@color/font_grey"
                 android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/name_label"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/shoe_list_title2" />
+
+            <TextView
+                android:id="@+id/description_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Description"
+                android:textColor="@color/font_grey"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/shoeDescriptionInput"
+                app:layout_constraintEnd_toEndOf="@+id/shoeDescriptionInput"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/shoeDescriptionInput" />
+
+            <TextView
+                android:id="@+id/name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Name"
+                android:textColor="@color/font_grey"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/shoeNameInput"
+                app:layout_constraintEnd_toEndOf="@+id/shoeNameInput"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/shoeNameInput" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

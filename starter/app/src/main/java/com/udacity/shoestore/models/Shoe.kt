@@ -7,10 +7,10 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Shoe(
-    var name: String = "none",
+    var name: String = "",
     var size: Double = 0.0,
-    var company: String = "none",
-    var description: String = "none"
+    var company: String = "",
+    var description: String = ""
 ) : Parcelable {
 
     var sizeString: String
